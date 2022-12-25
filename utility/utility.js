@@ -98,6 +98,15 @@ export function $() {
         }
         return listDate;
       },
+      isDateInRange: function (fromDate, toDate, checkDate) {
+        const start = Date.parse(fromDate);
+        const end = Date.parse(toDate);
+        const check = Date.parse(checkDate);
+        if (check <= end && check >= start) {
+          return true;
+        }
+        return false;
+      },
     },
   };
 
