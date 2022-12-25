@@ -98,9 +98,9 @@ export function $() {
         }
         return listDate;
       },
-      isDateInRange: function (fromDate, toDate, checkDate) {
-        const start = Date.parse(fromDate);
-        const end = Date.parse(toDate);
+      isDateInRange: function (startDate, endDate, checkDate) {
+        const start = Date.parse(startDate);
+        const end = Date.parse(endDate);
         const check = Date.parse(checkDate);
         if (check <= end && check >= start) {
           return true;
