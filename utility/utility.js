@@ -74,6 +74,15 @@ export function $() {
       isDateObject: function (value) {
         return value instanceof Date;
       },
+      isValidDateAsync: async function (dateISOstring, customMsg) {
+        return new Promise((resolve, reject) => {
+          if (!isNaN(Date.parse(dateISOstring))) {
+            resolve(dateISOstring);
+          } else {
+            reject(customMsg);
+          }
+        });
+      },
       monthDiff: function (startDate, endDate) {
         return (
           new Date(Date.parse(endDate)).getMonth() +
