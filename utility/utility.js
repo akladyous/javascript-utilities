@@ -86,6 +86,18 @@ export function $() {
         const d2 = new Date(endDate);
         return Math.round(Math.abs(d1 - d2) / this.oneDay) + 1;
       },
+      listFromDateRange: function (startDate, endDate) {
+        var listDate = [];
+        var dateMove = new Date(startDate);
+        let strDate = startDate;
+
+        while (strDate < endDate) {
+          strDate = dateMove.toISOString().slice(0, 10);
+          listDate.push(strDate);
+          dateMove.setDate(dateMove.getDate() + 1);
+        }
+        return listDate;
+      },
     },
   };
 
