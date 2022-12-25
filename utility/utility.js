@@ -1,10 +1,11 @@
-export const camelCaseToString = (str) => str.split(/(?=[A-Z])/).join(" ");
-
 export function $() {
   const self = {
     string: {
       capitalize: function (string) {
         return string.charAt(0).toUpperCase().concat(string.slice(1));
+      },
+      camelCaseToString: function (string) {
+        return string.split(/(?=[A-Z])/).join(" ");
       },
     },
     array: {
