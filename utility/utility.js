@@ -16,6 +16,43 @@ export function $() {
       sample(array) {
         return array[Math.floor(Math.random() * array.length)];
       },
+      removeDuplicates: function (array, key = "id") {
+        const data = array.reduce(function (prev, next) {
+          const removed = prev.filter((v) => {
+            return v[key] !== next[key];
+          });
+          return [...removed, next];
+        }, []);
+        return data;
+      },
+      isUnique: function (array = []) {
+        for (let i = 0; i < array.length; i++) {
+          if (array.indexOf(array[i]) !== array.lastIndexOf(array[i])) {
+            console.log(
+              "current index: ",
+              array[i],
+              "lastIndexOf i: ",
+              array.lastIndexOf(array[i])
+            );
+            return false;
+          }
+        }
+        return true;
+      },
+      hasUniqueValues: function (array = []) {
+        for (let i = 0; i < array.length; i++) {
+          if (array.indexOf(array[i]) !== array.lastIndexOf(array[i])) {
+            console.log(
+              "current index: ",
+              array[i],
+              "lastIndexOf i: ",
+              array.lastIndexOf(array[i])
+            );
+            return false;
+          }
+        }
+        return true;
+      },
     },
     object: {
       isUndefined: function (value) {
