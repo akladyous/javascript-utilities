@@ -107,6 +107,11 @@ export function $() {
         }
         return false;
       },
+      isValidDate: function (dateISOstring) {
+        if (!isNaN(Date.parse(dateISOstring))) {
+          return true;
+        } else return false;
+      },
     },
   };
 
