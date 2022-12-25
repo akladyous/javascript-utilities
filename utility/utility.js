@@ -98,6 +98,21 @@ export function $() {
         }
         return listDate;
       },
+      isValidDateRange: async function (
+        startDateISOstring,
+        endDateISOstring,
+        customMsg
+      ) {
+        return new Promise((resolve, reject) => {
+          if (
+            new Date(endDateISOstring).valueOf() < new Date(startDateISOstring)
+          ) {
+            reject(customMsg);
+          } else {
+            resolve(true);
+          }
+        });
+      },
       isDateInRange: function (startDate, endDate, checkDate) {
         const start = Date.parse(startDate);
         const end = Date.parse(endDate);
