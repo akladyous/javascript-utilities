@@ -69,6 +69,9 @@ export function $() {
         const regex = new RegExp(`/^[a-zA-Z0-9]+$/`);
         return regex.test(string);
       },
+      randomNum(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+      },
     },
     date: {
       isDateObject: function (value) {
