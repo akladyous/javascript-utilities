@@ -1,5 +1,6 @@
 export function $() {
   const self = {
+    oneDay: 24 * 60 * 60 * 1000, // hours*minutes*seconds*milliseconds
     string: {
       capitalize: function (string) {
         return string.charAt(0).toUpperCase().concat(string.slice(1));
@@ -73,6 +74,10 @@ export function $() {
       isDateObject: function (value) {
         return value instanceof Date;
       },
+      randomDate: function (start, end) {
+            let diff = new Date(Date.parse(end)) - new Date(Date.parse(start))
+            let newDiff = diff * Math.random()
+            return new Date(Date.parse(start) + newDiff).toISOString().slice(0, 10)
     },
   };
 
