@@ -74,10 +74,13 @@ export function $() {
       isDateObject: function (value) {
         return value instanceof Date;
       },
-      randomDate: function (start, end) {
-            let diff = new Date(Date.parse(end)) - new Date(Date.parse(start))
-            let newDiff = diff * Math.random()
-            return new Date(Date.parse(start) + newDiff).toISOString().slice(0, 10)
+      monthDiff: function (startDate, endDate) {
+        return (
+          new Date(Date.parse(endDate)).getMonth() +
+          1 -
+          (new Date(Date.parse(startDate)).getMonth() + 1)
+        );
+      },
     },
   };
 
