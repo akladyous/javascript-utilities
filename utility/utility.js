@@ -74,6 +74,11 @@ export function $() {
       isDateObject: function (value) {
         return value instanceof Date;
       },
+      isValidDate: function (dateISOstring) {
+        if (!isNaN(Date.parse(dateISOstring))) {
+          return true;
+        } else return false;
+      },
       isValidDateAsync: async function (dateISOstring, customMsg) {
         return new Promise((resolve, reject) => {
           if (!isNaN(Date.parse(dateISOstring))) {
@@ -130,11 +135,6 @@ export function $() {
           return true;
         }
         return false;
-      },
-      isValidDate: function (dateISOstring) {
-        if (!isNaN(Date.parse(dateISOstring))) {
-          return true;
-        } else return false;
       },
     },
   };
