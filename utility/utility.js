@@ -13,6 +13,9 @@ export function $() {
       compact: function (value) {
         return Array.isArray(value) ? value.filter(Boolean) : [];
       },
+      sample(array) {
+        return array[Math.floor(Math.random() * array.length)];
+      },
     },
     object: {
       isUndefined: function (value) {
