@@ -88,6 +88,14 @@ export function $() {
           }
         });
       },
+      randomDate: function (startDate, endDate) {
+        let diff =
+          new Date(Date.parse(endDate)) - new Date(Date.parse(startDate));
+        let newDiff = diff * Math.random();
+        return new Date(Date.parse(startDate) + newDiff)
+          .toISOString()
+          .slice(0, 10);
+      },
       monthDiff: function (startDate, endDate) {
         return (
           new Date(Date.parse(endDate)).getMonth() +
