@@ -81,6 +81,11 @@ export function $() {
           (new Date(Date.parse(startDate)).getMonth() + 1)
         );
       },
+      dayDiff: function (startDate, endDate) {
+        const d1 = new Date(startDate);
+        const d2 = new Date(endDate);
+        return Math.round(Math.abs(d1 - d2) / this.oneDay) + 1;
+      },
     },
   };
 
